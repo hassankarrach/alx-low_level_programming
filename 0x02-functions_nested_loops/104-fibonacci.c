@@ -1,30 +1,47 @@
 #include <stdio.h>
 
 /**
- * main - Entry Point
+ * main - fibonacci <3
  *
- * Return: Alawys 0
+ * Purpose - no hardcode
+ *
+ * Return:  (Success)
  */
 
 int main(void)
 {
-	unsigned long a, b;
-	int i;
+	unsigned long int i;
+	unsigned long int bef = 1;
+	unsigned long int aft = 2;
+	unsigned long int l = 1000000000;
+	unsigned long int bef1;
+	unsigned long int bef2;
+	unsigned long int aft1;
+	unsigned long int aft2;
 
-	a = 1;
-	b = 2;
-	printf("%lu, %lu, ", a, b);
+	printf("%lu", bef);
 
-	for (i = 3; i < 98; i++)
+	for (i = 1; i < 91; i++)
 	{
-		b += a;
-		a = b - a;
-
-		printf("%lu, ", b);
+		printf(", %lu", aft);
+		aft += bef;
+		bef = aft - bef;
 	}
 
-	b += a;
-	printf("%lu\n", b);
+	bef1 = (bef / l);
+	bef2 = (bef % l);
+	aft1 = (aft / l);
+	aft2 = (aft % l);
 
+	for (i = 92; i < 99; ++i)
+	{
+		printf(", %lu", aft1 + (aft2 / l));
+		printf("%lu", aft2 % l);
+		aft1 = aft1 + bef1;
+		bef1 = aft1 - bef1;
+		aft2 = aft2 + bef2;
+		bef2 = aft2 - bef2;
+	}
+	printf("\n");
 	return (0);
 }
