@@ -1,55 +1,22 @@
 #include "main.h"
 
 /**
-  * printNum - print postivie integer number
-  *
-  * @n: positive number
-  */
-void printNum(int n)
-{
-	if (!n)
-	{
-		return;
-	}
+ * print_number - prints an integer
+ * @n: input integer parameter
+**/
 
-	printNum(n / 10);
-
-	_putchar('0' + (n % 10));
-}
-
-/**
-  * print_number - print integer number
-  *
-  * @n: number
-  */
 void print_number(int n)
 {
-	int rem;
-
-	if (!n)
-	{
-		_putchar('0');
-
-		return;
-	}
+	unsigned int i = n;
 
 	if (n < 0)
 	{
-		_putchar('-');
-
-		rem = (n % 10) * -1;
-
-		n = (n / 10) * -1;
-
-		if (!n)
-		{
-			printNum(n);
-		}
-
-		printNum(rem);
+		_putchar(45);
+		i = -i;
 	}
-	else
+	if (i / 10)
 	{
-		printNum(n);
+		print_number(i / 10);
 	}
+	_putchar(i % 10 + '0');
 }
