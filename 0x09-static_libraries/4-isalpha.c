@@ -1,12 +1,26 @@
-#include "main.h"
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include <unistd.h>
 
 /**
- * _isalpha - checks for alphabetic character
- * @c: the character to be checked
- * Return: 1 if c is a letter, 0 otherwise
- */
+**_isalpha - Prototype practicing
+*
+* Description:Write a function that checks for alphabetic character.
+*
+* @c:character to check if it islowercase.
+*
+* Return:0-if lowercase,1-if not.
+*/
+
 int _isalpha(int c)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+if (c >= 65 && c <= 122)
+{
+return (1);
 }
-
+else
+{
+return (0);
+}
+}
